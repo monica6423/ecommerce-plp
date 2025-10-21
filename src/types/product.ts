@@ -58,17 +58,6 @@ export interface SearchParams {
   skip?: number;
 }
 
-export type SortOption = {
-  value: string;
-  label: string;
-};
-
-export type FilterOption = {
-  value: string;
-  label: string;
-  count?: number;
-};
-
 export interface Category {
   slug: string;
   name: string;

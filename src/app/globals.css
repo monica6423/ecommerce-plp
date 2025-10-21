@@ -3,11 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --border: #e5e7eb; /* gray-200 */
+
+  /* brand palettes */
+  --product-red-600: #FA5A2A; /* primary */
+  --product-red-700: #E14D1F; /* hover */
+  --product-red-tint: #FDEBE6; /* tint */
+  --product-red-tint-hover: #FAD8CF; /* tint hover */
+  --product-pink-600: #db2777;
+  --product-pink-700: #be185d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-primary: var(--product-red-600);
+  --color-primary-hover: var(--product-red-700);
+  --color-primary-tint: var(--product-red-tint);
+  --color-primary-tint-hover: var(--product-red-tint-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +30,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --border: #2a2a2a;
   }
 }
 
@@ -23,4 +38,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .product-card-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .product-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
 }

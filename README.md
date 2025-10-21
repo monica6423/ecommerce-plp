@@ -1,6 +1,6 @@
 # Momo Store - E-Commerce Product Listing Page
 
-A modern e-commerce Product Listing Page built with Next.js, TypeScript, and Tailwind CSS.
+A modern e-commerce Product Listing Page deployed on https://ecommerce-plp-two.vercel.app/.
 
 ### Installation & Running
 

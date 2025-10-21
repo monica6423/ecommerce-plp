@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { fetchProduct } from '@/lib/api';
-import { Star, ArrowLeft, ShoppingCart, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ArrowLeft, ShoppingCart, Heart } from 'lucide-react';
 import ProductImageCarousel from '@/components/ProductImageCarousel';
 
 interface ProductPageProps {
@@ -21,7 +20,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   let product;
   try {
     product = await fetchProduct(productId);
-  } catch (error) {
+  } catch {
     notFound();
   }
 
